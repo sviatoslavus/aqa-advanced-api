@@ -19,7 +19,7 @@ describe('Smoke test jsonPlaceholder API', ()=>{
     })
     
     
-    test('/POST new post status is 201 ', async () => {
+    test('/POST create new post status code is 201 ', async () => {
         const response = await axiosInstance.post('/posts', 
             {   userId: 1, 
                 title:"checkus",
@@ -30,7 +30,7 @@ describe('Smoke test jsonPlaceholder API', ()=>{
         expect(response.data.title).toMatch("checkus")
     })
     
-    test('/GET comments from posts/1 ', async () => {
+    test('/GET nested comment from posts/1 ', async () => {
         const response = await axiosInstance.get('/posts/1/comments')
         expect(response.data[0].email).toMatch('Eliseo@gardner.biz')
     })
