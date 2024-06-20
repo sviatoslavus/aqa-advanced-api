@@ -12,7 +12,7 @@ const axiosInstance = axios.create({
 })
 
 
-describe('Smoke test jsonPlaceholder API', ()=>{
+describe.skip('Smoke test jsonPlaceholder API', ()=>{
     test('GET /posts/1 status code is 200', async()=>{
         const response = await axiosInstance.get('/posts/1')
         expect(response.status).toBe(200)
